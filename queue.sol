@@ -21,6 +21,13 @@ contract queue {
         queue.push(name);
     }
 
+    function shiftClient() public modifyQueue{
+        for(uint i = 0; i < queue.length - 1; i++) {
+            queue[i] = queue[i + 1];
+        }
+        queue.pop();
+    }
+
     function showQueue() public view returns(string[]) {
         return queue;
     }
