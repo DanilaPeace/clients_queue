@@ -22,6 +22,9 @@ contract queue {
     }
 
     function shiftClient() public modifyQueue{
+        // If the queue is empty
+        require(!queue.empty(), 110);
+        
         for(uint i = 0; i < queue.length - 1; i++) {
             queue[i] = queue[i + 1];
         }
