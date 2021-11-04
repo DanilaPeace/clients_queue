@@ -2,7 +2,7 @@
 pragma ton-solidity >= 0.35.0;
 pragma AbiHeader expire;
 
-contract queue {
+contract Queue {
     string[] public queue;
 
     constructor() public{
@@ -11,17 +11,17 @@ contract queue {
         tvm.accept();
     }
 
-    modifier modifyQueue {
+    modifier checkOwner {
         require(msg.pubkey() == tvm.pubkey(), 102);
         tvm.accept();
         _;
     }
 
-    function pushClient(string name) public modifyQueue{
+    function pushClient(string name) public checkOwner{
         queue.push(name);
     }
 
-    function shiftClient() public modifyQueue{
+    function shiftClient() public checkOwner{
         // If the queue is empty
         require(!queue.empty(), 110);
 
