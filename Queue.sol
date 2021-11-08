@@ -17,12 +17,12 @@ contract Queue {
         _;
     }
 
-    function pushClient(string name) public checkOwner{
+    function pushClientToEnd(string name) public checkOwner{
         queue.push(name);
     }
 
-    function shiftClient() public checkOwner{
-        // If the queue is empty
+    function removeClientFromFront() public checkOwner{
+        // If the queue is empty an error 110 is throwт
         require(!queue.empty(), 110);
 
         for(uint i = 0; i < queue.length - 1; i++) {

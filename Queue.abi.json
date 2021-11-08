@@ -1,6 +1,5 @@
 {
 	"ABI version": 2,
-	"version": "2.1",
 	"header": ["time", "expire"],
 	"functions": [
 		{
@@ -11,15 +10,15 @@
 			]
 		},
 		{
-			"name": "pushClient",
+			"name": "pushClientToEnd",
 			"inputs": [
-				{"name":"name","type":"string"}
+				{"name":"name","type":"bytes"}
 			],
 			"outputs": [
 			]
 		},
 		{
-			"name": "shiftClient",
+			"name": "removeClientFromFront",
 			"inputs": [
 			],
 			"outputs": [
@@ -30,18 +29,12 @@
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"queue","type":"string[]"}
+				{"name":"queue","type":"bytes[]"}
 			]
 		}
 	],
 	"data": [
 	],
 	"events": [
-	],
-	"fields": [
-		{"name":"_pubkey","type":"uint256"},
-		{"name":"_timestamp","type":"uint64"},
-		{"name":"_constructorFlag","type":"bool"},
-		{"name":"queue","type":"string[]"}
 	]
 }
