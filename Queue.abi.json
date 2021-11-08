@@ -25,11 +25,11 @@
 			]
 		},
 		{
-			"name": "queue",
+			"name": "m_queue",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"queue","type":"bytes[]"}
+				{"name":"m_queue","type":"bytes[]"}
 			]
 		}
 	],
